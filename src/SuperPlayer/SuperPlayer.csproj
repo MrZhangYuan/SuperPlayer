@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95384ACE-6B8A-4D60-B27C-D16FD7D5B0AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SuperPlayer</RootNamespace>
+    <AssemblyName>SuperPlayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SuperPlayer.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Images\Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>BF1A6981D0CAD5D9E228681FBD7B1D9CF5A6F42A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SuperPlayer_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Docking.Wpf, Version=17.2.662.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\ActiproLibs\ActiproSoftware.Docking.Wpf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ActiproSoftware.Shared.Wpf, Version=17.2.662.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\ActiproLibs\ActiproSoftware.Shared.Wpf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ActiproSoftware.Views.Wpf, Version=17.2.662.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\ActiproLibs\ActiproSoftware.Views.Wpf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="ShaderEffectLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\ShaderEffectLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TransitionEffects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\TransitionEffects.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="APlayerHost.cs" />
+    <Compile Include="AppInfo.cs" />
+    <Compile Include="Components\MusicBar.xaml.cs">
+      <DependentUpon>MusicBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SysCommandBar.xaml.cs">
+      <DependentUpon>SysCommandBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MediaItemDetailDialog.xaml.cs">
+      <DependentUpon>MediaItemDetailDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DispatcherService.cs" />
+    <Compile Include="Helper\ImageBuildHelper.cs" />
+    <Compile Include="Helper\PlayerHostHelper.cs" />
+    <Compile Include="Internal\WindowsThumbnailProvider.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Services\FileThumbnailBitmapCreater.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\MediaCenterViewModel.cs" />
+    <Compile Include="Views\AplayerControl.xaml.cs">
+      <DependentUpon>AplayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MediaCenter.xaml.cs">
+      <DependentUpon>MediaCenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MediaCenterComponents\VideoLibraryView.xaml.cs">
+      <DependentUpon>VideoLibraryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayerController.xaml.cs">
+      <DependentUpon>PlayerController.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayerController.OpacityMask.cs" />
+    <Page Include="Components\MusicBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\SysCommandBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\MediaItemDetailDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\ResourceDir.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\SliderStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AplayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MediaCenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MediaCenterComponents\VideoLibraryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayerController.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Views\PlayerController.UpdateUI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SuperApp.DBAdapter.SQLite\SuperApp.DBAdapter.SQLite.csproj">
+      <Project>{c0cc4ef1-1c8f-4bc8-8e8d-0870703bebac}</Project>
+      <Name>SuperApp.DBAdapter.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperApp.DBAdapter\SuperApp.DBAdapter.csproj">
+      <Project>{6a3e2cc6-27af-45e2-80f0-4074bf544916}</Project>
+      <Name>SuperApp.DBAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperApp.EntityFramework\SuperApp.EntityFramework.csproj">
+      <Project>{a23c3e52-8cbe-4c40-83b1-ad66b1f09e60}</Project>
+      <Name>SuperApp.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperApp.Shell.Controls\SuperApp.Shell.Controls.csproj">
+      <Project>{648f43d6-68e0-4620-81c4-5bab75b0df77}</Project>
+      <Name>SuperApp.Shell.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperPlayer.Business\SuperPlayer.Business.csproj">
+      <Project>{97e1ed79-098a-4749-b1af-ea4f11f96716}</Project>
+      <Name>SuperPlayer.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperPlayer.Core.Service\SuperPlayer.Core.Service.csproj">
+      <Project>{935298B6-AA24-43A5-9426-7F8F50235F21}</Project>
+      <Name>SuperPlayer.Core.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperPlayer.Core.Utilities\SuperPlayer.Core.Utilities.csproj">
+      <Project>{30C37144-11BC-4E83-84B2-4EAF07CA20D2}</Project>
+      <Name>SuperPlayer.Core.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperPlayer.Core\SuperPlayer.Core.csproj">
+      <Project>{4fa9d15a-342d-480e-a23f-a1402fddf650}</Project>
+      <Name>SuperPlayer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperPlayer.Models\SuperPlayer.Models.csproj">
+      <Project>{ff3bb0d4-576a-44ec-a857-d08418696137}</Project>
+      <Name>SuperPlayer.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UltimateCore\UltimateCore.csproj">
+      <Project>{66bbb21d-aa56-4783-9a36-2a8554b661fc}</Project>
+      <Name>UltimateCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UltimatePresentation\UltimatePresentation.csproj">
+      <Project>{1fbba7c6-6521-4336-a46a-f647ecba5d76}</Project>
+      <Name>UltimatePresentation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="APlayer3Lib">
+      <Guid>{97830570-35FE-4195-83DE-30E79B718713}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>True</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAPlayer3Lib">
+      <Guid>{97830570-35FE-4195-83DE-30E79B718713}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>True</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Logo.ico" />
+    <Resource Include="Resources\Images\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MediaBack.png" />
+    <Resource Include="Resources\Images\MediaFront.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MediaNext.png" />
+    <Resource Include="Resources\Images\MediaPause.png" />
+    <Resource Include="Resources\Images\MediaPlay.png" />
+    <Resource Include="Resources\Images\MediaPrevious.png" />
+    <Resource Include="Resources\Images\MediaStop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\FullScreenCollapse.png" />
+    <Resource Include="Resources\Images\FullScreenExpand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\FolderOpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Close.png" />
+    <Resource Include="Resources\Images\Min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Maximize.png" />
+    <Resource Include="Resources\Images\Restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Dragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="atl71.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\OptionsDropDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Cube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Image.png" />
+    <Resource Include="Resources\Images\Video.png" />
+    <Resource Include="Resources\Images\Audio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\UnKnowType.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\DetailView.png" />
+    <Resource Include="Resources\Images\IconView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\FolderOpen2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MediaPlayCirlce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ShaderEffectLibrary.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="TransitionEffects.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Logo_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Logo_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ActiproLibs\ActiproSoftware.BarCode.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.BarCode.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Charts.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Charts.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.DataGrid.Contrib.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.DataGrid.Contrib.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Docking.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Docking.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Editors.Interop.DataGrid.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Editors.Interop.DataGrid.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Editors.Interop.Grids.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Editors.Interop.Grids.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Editors.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Editors.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Gauge.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Gauge.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Grids.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Grids.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.MicroCharts.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.MicroCharts.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Navigation.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Navigation.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Ribbon.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Ribbon.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Shared.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Shared.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Addons.JavaScript.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Addons.JavaScript.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Addons.Python.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Addons.Python.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Addons.Xml.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Addons.Xml.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.SyntaxEditor.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Addons.DotNet.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Addons.DotNet.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Addons.JavaScript.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Addons.JavaScript.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Addons.Python.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Addons.Python.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Addons.Xml.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Addons.Xml.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.LLParser.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.LLParser.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Text.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Themes.Luna.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Themes.Luna.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Themes.Office.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Themes.Office.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Views.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Views.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Wizard.Wpf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ActiproLibs\ActiproSoftware.Wizard.Wpf.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

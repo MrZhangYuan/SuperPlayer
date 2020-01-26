@@ -1,0 +1,863 @@
+<?xml version="1.0"?><doc><assembly><name>ActiproSoftware.Editors.Interop.Grids.Wpf</name></assembly><members><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BuiltinPropertyEditors"><summary>
+            Provides access to the built-in editor property value templates.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BuiltinPropertyEditors.GetIsEnabled(ActiproSoftware.Windows.Controls.Grids.PropertyEditors.IPropertyEditorsProvider)"><summary>
+            Gets the value of the <c>IsEnabled</c> attached property for the specified object.
+            </summary><param name="obj">The object from which the property value is read.</param><returns>The object's value.</returns></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BuiltinPropertyEditors.SetIsEnabled(ActiproSoftware.Windows.Controls.Grids.PropertyEditors.IPropertyEditorsProvider,System.Boolean)"><summary>
+            Sets the value of the <c>IsEnabled</c> attached property to the specified object. 
+            </summary><param name="obj">The object to which the attached property is written.</param><param name="value">The value to set.</param></member><member name="F:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BuiltinPropertyEditors.IsEnabledProperty"><summary>
+            Identifies the <c>IsEnabled</c> dependency property.  This field is read-only.
+            </summary><value>The identifier for the <c>IsEnabled</c> dependency property.</value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BrushPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Brush</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.BrushEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BrushPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BrushPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BrushPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BrushPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BrushPropertyEditor.HasSwatch"><summary>
+            Gets or sets whether the edit box should display a swatch that previews the <c>Value</c>.
+            </summary><value><c>true</c> if the edit box should display a swatch that previews the <c>Value</c>; otherwise, <c>false</c>.
+            The default value is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BrushPropertyEditor.IsAlphaEnabled"><summary>
+            Gets or sets whether the alpha channel (transparency) of the brush value colors are enabled.
+            </summary><value><c>true</c> if the alpha channel (transparency) of the brush value colors are enabled; otherwise, <c>false</c>.
+            The default value is <c>true</c>.
+            </value><remarks>
+            When disabled, no transparency is supported.
+            </remarks></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BrushPropertyEditor.IsGradientAllowed"><summary>
+            Gets or sets whether gradient brush values can be entered.
+            </summary><value><c>true</c> if gradient brush values can be entered; otherwise, <c>false</c>.
+            The default value is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BrushPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Byte</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.ByteEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"D"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.PickerKind"><summary>
+            Gets or sets a <see cref="T:ActiproSoftware.Windows.Controls.Editors.ByteEditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.Windows.Controls.Editors.ByteEditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            The default value is <c>Calculator</c> in WPF and <c>Default</c> in UWP.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BytePropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableTimePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>DateTime</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.TimeEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableTimePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableTimePropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableDatePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>DateTime</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.DateEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableDatePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableDatePropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>DateTime</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.TimeEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimePropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimePropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimePropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimePropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DatePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>DateTime</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.DateEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DatePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DatePropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DatePropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DatePropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DatePropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a masked <c>String</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.MaskedTextBox" />.
+            </summary><remarks>
+            This property editor is not automatically installed by the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.BuiltinPropertyEditors" />
+            since it requires a specific <see cref="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.Mask" /> to be set to the scenario in which it is used.
+            Set a <see cref="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.Mask" /> and also the <c>PropertyName</c> (or also <c>ObjectType</c> and <c>PropertyType</c> properties as needed)
+            of the property to target with this property editor.
+            </remarks></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor" /> class.
+            </summary></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.IsCaseAutoCorrected"><summary>
+            Gets or sets whether characters entered will have their case auto-corrected to match the defined mask.
+            </summary><value><c>true</c> if characters entered will have their case auto-corrected to match the defined mask; otherwise, <c>false</c>.
+            The default value is <c>false</c>.
+            </value><remarks>
+            When this property is set to <c>true</c>, then the <see cref="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.IsCaseSensitive" /> property is ignored.
+            </remarks></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.IsCaseSensitive"><summary>
+            Gets or sets whether the mask is case sensitive.
+            </summary><value><c>true</c> if the mask is case sensitive; otherwise, <c>false</c>.
+            The default value is <c>false</c>.
+            </value><remarks>
+            When the <see cref="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.IsCaseAutoCorrected" /> property is set to <c>true</c>, this property is ignored.
+            </remarks></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.Mask"><summary>
+            Gets or sets the text that designates the input mask.
+            </summary><value>
+            The text that designates the input mask.
+            The default value is <see langword="null" />.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.MaskKind"><summary>
+            Gets or sets the kind of input mask.
+            </summary><value>
+            The kind of input mask.
+            The default value is <c>Regex</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.PromptChar"><summary>
+            Gets or sets the character used to indicate required input.
+            </summary><value>
+            The character used to indicate required input.
+            The default value is <c>\u2022</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.MaskedStringPropertyEditor.PromptVisibility"><summary>
+            Gets or sets the visibility of mask prompts.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.Windows.Controls.Editors.MaskPromptVisibility" /> that indicates the visibility of mask prompts.
+            The default value is <c>FocusedOnly</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableBytePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Byte</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.ByteEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableBytePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableBytePropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableSinglePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Single</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.SingleEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableSinglePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableSinglePropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableTimeSpanPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>TimeSpan</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.TimeSpanEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableTimeSpanPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableTimeSpanPropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableVectorPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Vector</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.VectorEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableVectorPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableVectorPropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt32RectPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Int32Rect</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int32RectEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt32RectPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt32RectPropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt64PropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Int64</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int64EditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt64PropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt64PropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt16PropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Int16</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int16EditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt16PropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt16PropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Single</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.SingleEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"G"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.IsNaNAllowed"><summary>
+            Gets or sets whether <see cref="F:System.Single.NaN" /> is accepted as a value.
+            </summary><value><c>true</c> if <see cref="F:System.Single.NaN" /> is accepted as a value; otherwise, <c>false</c>.
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.IsNegativeInfinityAllowed"><summary>
+            Gets or sets whether <see cref="F:System.Single.NegativeInfinity" /> is accepted as a value.
+            </summary><value><c>true</c> if <see cref="F:System.Single.NegativeInfinity" /> is accepted as a value; otherwise, <c>false</c>.
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.IsPositiveInfinityAllowed"><summary>
+            Gets or sets whether <see cref="F:System.Single.PositiveInfinity" /> is accepted as a value.
+            </summary><value><c>true</c> if <see cref="F:System.Single.PositiveInfinity" /> is accepted as a value; otherwise, <c>false</c>.
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.PickerKind"><summary>
+            Gets or sets a <see cref="T:ActiproSoftware.Windows.Controls.Editors.SingleEditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.Windows.Controls.Editors.SingleEditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            The default value is <c>Calculator</c> in WPF and <c>Default</c> in UWP.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SinglePropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Int64</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int64EditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"D"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.PickerKind"><summary>
+            Gets or sets a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int64EditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int64EditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            The default value is <c>Calculator</c> in WPF and <c>Default</c> in UWP.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int64PropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Int16</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int16EditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"D"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.PickerKind"><summary>
+            Gets or sets a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int16EditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int16EditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            The default value is <c>Calculator</c> in WPF and <c>Default</c> in UWP.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int16PropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableThicknessPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Thickness</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.ThicknessEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableThicknessPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableThicknessPropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableSizePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Size</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.SizeEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableSizePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableSizePropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableRectPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Rect</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.RectEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableRectPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableRectPropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullablePointPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Point</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.PointEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullablePointPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullablePointPropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt32PropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Int32</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int32EditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt32PropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableInt32PropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableGuidPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Guid</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.GuidEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableGuidPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableGuidPropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableDoublePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Double</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.DoubleEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableDoublePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableDoublePropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableDateTimePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>DateTime</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.DateTimeEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableDateTimePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableDateTimePropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableCornerRadiusPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>CornerRadius</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.CornerRadiusEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableCornerRadiusPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableCornerRadiusPropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableColorPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a nullable <c>Color</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.ColorEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableColorPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.NullableColorPropertyEditor" /> class.
+            </summary></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ColorPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Color</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.ColorEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ColorPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ColorPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ColorPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ColorPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ColorPropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ColorPropertyEditor.HasSwatch"><summary>
+            Gets or sets whether the edit box should display a swatch that previews the <c>Value</c>.
+            </summary><value><c>true</c> if the edit box should display a swatch that previews the <c>Value</c>; otherwise, <c>false</c>.
+            The default value is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ColorPropertyEditor.IsAlphaEnabled"><summary>
+            Gets or sets whether the alpha channel (transparency) of the color value is enabled.
+            </summary><value><c>true</c> if the alpha channel (transparency) of the color value is enabled; otherwise, <c>false</c>.
+            The default value is <c>true</c>.
+            </value><remarks>
+            When disabled, no transparency is supported.
+            </remarks></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ColorPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Int32Rect</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int32RectEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"G"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32RectPropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>TimeSpan</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.TimeSpanEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"c"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>7.3:5:5:050</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.TimeSpanPropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1.1:1:1:1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Vector</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.VectorEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"G"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.VectorPropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Thickness</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.ThicknessEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"G"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.ThicknessPropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Rect</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.RectEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"G"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.RectPropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Size</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.SizeEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"G"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.SizePropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Point</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.PointEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"G"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PointPropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DateTimePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>DateTime</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.DateTimeEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DateTimePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DateTimePropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DateTimePropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DateTimePropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DateTimePropertyEditor.Format"><summary>
+            Gets or sets the date/time format string.
+            </summary><value>
+            The number date/time string.
+            The default value is <c>"g"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DateTimePropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DateTimePropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DateTimePropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>CornerRadius</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.CornerRadiusEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"G"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.CornerRadiusPropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.GuidPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Guid</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.GuidEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.GuidPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.GuidPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.GuidPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.GuidPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.GuidPropertyEditor.Format"><summary>
+            Gets or sets the GUID format string.
+            </summary><value>
+            The GUID format string.
+            The default value is <c>"D"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.GuidPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.EnumPropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Enum</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.EnumEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.EnumPropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.EnumPropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.EnumPropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.EnumPropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.EnumPropertyEditor.EnumSortComparer"><summary>
+            Gets or sets the <see cref="T:System.Collections.Generic.IComparer`1" /> used to sort the enumeration values.
+            </summary><value>
+            The <see cref="T:System.Collections.Generic.IComparer`1" /> used to sort the enumeration values; otherwise <see langword="null" /> to indicate no sorting, which will use the order the enumeration values are defined.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.EnumPropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.EnumPropertyEditor.UseDisplayAttributes"><summary>
+            Gets or sets a value indicating whether enumeration values should be displayed using an associated <c>DisplayAttribute</c>, if any.
+            </summary><value><c>true</c> if enumeration values should be displayed using an associated <c>DisplayAttribute</c>, if any; otherwise <c>false</c>.
+            The default value is <c>false</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Double</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.DoubleEditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"G"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.IsNaNAllowed"><summary>
+            Gets or sets whether <see cref="F:System.Double.NaN" /> is accepted as a value.
+            </summary><value><c>true</c> if <see cref="F:System.Double.NaN" /> is accepted as a value; otherwise, <c>false</c>.
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.IsNegativeInfinityAllowed"><summary>
+            Gets or sets whether <see cref="F:System.Double.NegativeInfinity" /> is accepted as a value.
+            </summary><value><c>true</c> if <see cref="F:System.Double.NegativeInfinity" /> is accepted as a value; otherwise, <c>false</c>.
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.IsPositiveInfinityAllowed"><summary>
+            Gets or sets whether <see cref="F:System.Double.PositiveInfinity" /> is accepted as a value.
+            </summary><value><c>true</c> if <see cref="F:System.Double.PositiveInfinity" /> is accepted as a value; otherwise, <c>false</c>.
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.PickerKind"><summary>
+            Gets or sets a <see cref="T:ActiproSoftware.Windows.Controls.Editors.DoubleEditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.Windows.Controls.Editors.DoubleEditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            The default value is <c>Calculator</c> in WPF and <c>Default</c> in UWP.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.DoublePropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor"><summary>
+            Represents a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> for editing a <c>Int32</c> value with a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int32EditBox" />.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.#ctor"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor" /> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.#ctor(System.Type)"><summary>
+            Initializes an instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor" /> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.DefaultValue"><summary>
+            Gets or sets the value to set when incrementing/decrementing from a null value.
+            </summary><value>
+            The value to set when incrementing/decrementing from a null value.
+            The default value is <c>0</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.Format"><summary>
+            Gets or sets the number format string.
+            </summary><value>
+            The number format string.
+            The default value is <c>"D"</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.LargeChange"><summary>
+            Gets or sets the large change value.
+            </summary><value>
+            The large change value.
+            The default value is <c>5</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.Maximum"><summary>
+            Gets or sets the highest possible value.
+            </summary><value>
+            The highest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.Minimum"><summary>
+            Gets or sets the lowest possible value.
+            </summary><value>
+            The lowest possible value.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.PickerKind"><summary>
+            Gets or sets a <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int32EditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.Windows.Controls.Editors.Int32EditBoxPickerKind" /> indicating the pre-defined <c>Style</c> to apply to the picker used within the popup.
+            The default value is <c>Calculator</c> in WPF and <c>Default</c> in UWP.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Int32PropertyEditor.SmallChange"><summary>
+            Gets or sets the small change value.
+            </summary><value>
+            The small change value.
+            The default value is <c>1</c>.
+            </value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PropertyEditorsResourceDictionary"><summary>
+            Represents a <see cref="T:System.Windows.ResourceDictionary" /> related to the property editors defined in this assembly.
+            </summary><summary>
+            PropertyEditorsResourceDictionary
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PropertyEditorsResourceDictionary.InitializeComponent"><summary>
+            InitializeComponent
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PropertyEditorsResourceDictionary.#ctor"><summary>
+            Initializes a new instance of the <see cref="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PropertyEditorsResourceDictionary" /> class.
+            </summary></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.PropertyEditorsResourceDictionary.Instance"><summary>
+            Gets the instance of the <see cref="T:System.Windows.ResourceDictionary" />.
+            </summary><value>The instance of the <see cref="T:System.Windows.ResourceDictionary" />.</value><remarks>
+            Use this property to ensure that no excess instances of this type are created.
+            </remarks></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PropertyEditorBase"><summary>
+            Represents the abstract base class for a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> that uses Actipro Editors.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PropertyEditorBase.CreateValueTemplate"><summary>
+            Creates the <see cref="T:System.Windows.DataTemplate" /> to use for editing the property value.
+            </summary><returns>The <see cref="T:System.Windows.DataTemplate" /> to use for editing the property value.</returns></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PropertyEditorBase.#ctor(System.Type)"><summary>
+            Initializes an instance of the <c>PropertyEditorBase</c> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PropertyEditorBase.PredefinedValueTemplateKey"><summary>
+            Gets the resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.
+            </summary><value>The resource key that references a pre-defined <see cref="T:System.Windows.DataTemplate" /> within internal resources to use for editing the property value.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PropertyEditorBase.ValueTemplate"><summary>
+            Gets or sets the <see cref="T:System.Windows.DataTemplate" /> to use for editing the property value.
+            </summary><value>The <see cref="T:System.Windows.DataTemplate" /> to use for editing the property value.</value></member><member name="T:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase"><summary>
+            Represents the abstract base class for a <see cref="T:ActiproSoftware.Windows.Controls.Grids.PropertyEditors.PropertyEditor" /> that uses a part edit box.
+            </summary></member><member name="M:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.#ctor(System.Type)"><summary>
+            Initializes an instance of the <c>PartEditBoxPropertyEditorBase</c> class.
+            </summary><param name="propertyType">The type of the property.</param></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.CommitTriggers"><summary>
+            Gets or sets the triggers that will force this control to commit any changes.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.Windows.Controls.Editors.PartEditBoxCommitTriggers" /> indicating the triggers that will force this control to commit any changes.
+            The default value is <c>PartEditBoxCommitTriggers.Default</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.HasPopup"><summary>
+            Gets or sets a value indicating whether the control has a popup available.
+            </summary><value><c>true</c> if the control has a popup available; otherwise <c>false</c>.
+            The default value is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.IsArrowKeyPartNavigationEnabled"><summary>
+            Gets or sets a value indicating whether the left/right arrow keys can be used to move between and select editable parts.
+            </summary><value><c>true</c> if the left/right arrow keys can be used to move between and select editable parts; otherwise <c>false</c>.
+            The default value is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.IsEditable"><summary>
+            Gets or sets a value indicating whether the edit box's text area is editable.
+            </summary><value><c>true</c> if the edit box's text area is editable; otherwise <c>false</c>.
+            The default value is <c>true</c>.
+            </value><remarks>
+            When <c>false</c>, the edit box behaves more like a <c>ComboBox</c>.
+            </remarks></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.IsNullAllowed"><summary>
+            Gets or sets a value indicating whether null values are allowed to be entered by the user.
+            </summary><value><c>true</c> if null values are allowed to be entered by the user; otherwise <c>false</c>.
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.PlaceholderText"><summary>
+            Gets or sets the text that is displayed in the control until the value is changed by a user action or some other operation.
+            </summary><value>The text that is displayed in the control until the value is changed by a user action or some other operation.</value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.SpinnerVisibility"><summary>
+            Gets or sets a value indicating if and when the control has a spinner available.
+            </summary><value>
+            A value indicating if and when the control has a spinner available.
+            The default value is <c>SpinnerVisibility.Collapsed</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.SpinWrapping"><summary>
+            Gets or sets the wrapping behavior used when spinning past a minimum or maximum value in the active part.
+            </summary><value>
+            The wrapping behavior used when spinning past a minimum or maximum value in the active part.
+            The default value is <c>SpinWrapping.NoWrap</c>.
+            </value></member><member name="P:ActiproSoftware.Windows.Controls.Editors.Interop.Grids.PropertyEditors.Primitives.PartEditBoxPropertyEditorBase.TextAlignment"><summary>
+            Gets or sets the text alignment of the text editing area.
+            </summary><value>
+            The text alignment of the text editing area.
+            The default value is <c>TextAlignment.Left</c>.
+            </value></member></members></doc>

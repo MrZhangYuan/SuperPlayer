@@ -1,0 +1,92 @@
+﻿<UserControl
+    x:Class="SuperPlayer.Components.SysCommandBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syscmd="clr-namespace:SuperPlayer.Core;assembly=SuperPlayer.Core"
+    xmlns:ultimate="http://schems.ultimate.com/netfx/2016/xaml/presentation"
+    x:Name="SELF"
+    d:DesignHeight="50"
+    d:DesignWidth="150"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SuperPlayer;component/Resources/ResourceDir.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--<ImageBrush
+                        x:Key="FullScreenCollapse"
+                        ImageSource="/SuperPlayer;component/Resources/Images/FullScreenCollapse.png"
+                        Stretch="None" />
+                <ImageBrush
+                        x:Key="FullScreenExpand"
+                        ImageSource="/SuperPlayer;component/Resources/Images/FullScreenExpand.png"
+                        Stretch="None" />
+                <ImageBrush
+                        x:Key="FolderOpen"
+                        ImageSource="/SuperPlayer;component/Resources/Images/FolderOpen.png"
+                        Stretch="None" />-->
+
+
+
+
+            <Style TargetType="{x:Type ultimate:GlyphButton}">
+                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                <!--<Setter Property="Cursor" Value="Hand" />-->
+                <Setter Property="HoverBackground" Value="#40FFFFFF" />
+                <Setter Property="HoverBorderBrush" Value="Transparent" />
+                <Setter Property="HoverBorderThickness" Value="0" />
+                <Setter Property="PressedBackground" Value="#20FFFFFF" />
+                <Setter Property="PressedBorderBrush" Value="Transparent" />
+                <Setter Property="PressedBorderThickness" Value="0" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            </Style>
+
+            <Style TargetType="Rectangle">
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+                <Setter Property="UseLayoutRounding" Value="True" />
+                <Setter Property="Height" Value="16" />
+                <Setter Property="Width" Value="16" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ultimate:StreachUniformPanel>
+        <ultimate:GlyphButton Command="{Binding Source={x:Static syscmd:SystemCommandManager.Instance}, Path=[OpenMenu]}" Visibility="{Binding ElementName=SELF, Path=OptionBtVisibility}">
+            <Rectangle Fill="{StaticResource OptionsDropDown}" />
+        </ultimate:GlyphButton>
+
+        <ultimate:GlyphButton
+            Grid.Column="1"
+            Command="{Binding Source={x:Static syscmd:SystemCommandManager.Instance}, Path=[Minimized]}"
+            Visibility="{Binding ElementName=SELF, Path=MinBtVisibility}">
+            <Rectangle Fill="{StaticResource Min}" />
+        </ultimate:GlyphButton>
+
+        <Grid Grid.Column="2" Visibility="{Binding ElementName=SELF, Path=NomalMaxBtVisibility}">
+            <ultimate:GlyphButton Command="{Binding Source={x:Static syscmd:SystemCommandManager.Instance}, Path=[Maximized]}" Visibility="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsEnabled, Converter={x:Static ultimate:BoolenToVisibilityConverter.Instance}}">
+                <Rectangle Fill="{StaticResource Maximize}" />
+            </ultimate:GlyphButton>
+            <ultimate:GlyphButton
+                Grid.Column="1"
+                Command="{Binding Source={x:Static syscmd:SystemCommandManager.Instance}, Path=[Normal]}"
+                Visibility="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsEnabled, Converter={x:Static ultimate:BoolenToVisibilityConverter.Instance}}">
+                <Rectangle Fill="{StaticResource Restore}" />
+            </ultimate:GlyphButton>
+        </Grid>
+
+        <ultimate:GlyphButton
+            Grid.Column="3"
+            Command="{Binding Source={x:Static syscmd:SystemCommandManager.Instance}, Path=[Close]}"
+            Visibility="{Binding ElementName=SELF, Path=CloseBtVisibility}">
+            <Rectangle Fill="{StaticResource Close}" />
+        </ultimate:GlyphButton>
+    </ultimate:StreachUniformPanel>
+</UserControl>

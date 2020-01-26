@@ -1,0 +1,21 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SuperApp.Shell.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/RichViewWindow.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/SmartTextBox.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/LoadingContentControl.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/PasswordControl.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/NumberBox.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/ListControl.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/ListControlItem.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/PageControl.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/SearchListControl.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/SearchListControlItem.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/SoftKeyboard.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/SwitchViewControlItem.xaml" />
+        <ResourceDictionary Source="/SuperApp.Shell.Controls;component/Themes/SwitchViewControl.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

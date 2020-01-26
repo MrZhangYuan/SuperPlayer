@@ -1,0 +1,843 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:SuperApp.Shell.Controls">
+    <Style TargetType="{x:Type Controls:NumPadKey}">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="#FF303030" />
+        <Setter Property="Focusable" Value="False" />
+        <!--<Setter Property="InputMethod.IsInputMethodEnabled" Value="False" />-->
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <!--<Setter Property="FontSize" Value="20" />-->
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:NumPadKey}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Border x:Name="opertymark" Panel.ZIndex="0" />
+                            <Border x:Name="opertymark2" Panel.ZIndex="10" />
+                            <TextBlock
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Panel.ZIndex="20"
+                                FontSize="{TemplateBinding FontSize}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="{TemplateBinding DisplayKey}"
+                                TextTrimming="CharacterEllipsis"
+                                TextWrapping="WrapWithOverflow" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.Setters>
+                                <Setter TargetName="opertymark2" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ControlsExterior.PressedBackground)}" />
+                                <Setter Property="Foreground" Value="Snow" />
+                            </Trigger.Setters>
+                        </Trigger>
+                        <!--<Trigger Property="IsMouseOver" Value="True">
+                                                        <Trigger.Setters>
+                                                                <Setter TargetName="opertymark" Property="Background" Value="LightGray" />
+                                                        </Trigger.Setters>
+                                                </Trigger>-->
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                                                        <Trigger.Setters>
+                                                                <Setter Property="Background" Value="#FFF0F0F0" />
+                                                        </Trigger.Setters>
+                                                </Trigger>-->
+                        <!--<Trigger Property="IsMouseOver" Value="True">
+                                                        <Trigger.Setters>
+                                                                <Setter Property="Foreground" Value="Snow" />
+                                                                <Setter TargetName="opertymark" Property="Background" Value="{x:Static Managers:ThemeColorManager.ThemeBrush_99}" />
+                                                        </Trigger.Setters>
+                                                </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Controls:SoftKey}">
+        <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type Controls:SoftKeyboard}, Mode=FindAncestor}, Path=Background}" />
+        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type Controls:SoftKeyboard}, Mode=FindAncestor}, Path=Foreground}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="InputMethod.IsInputMethodEnabled" Value="False" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <!--<Setter Property="IsCapsLock" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type Controls:SoftKeyboard}, Mode=FindAncestor}, Path=IsCapsLock}" />-->
+        <!--<Setter Property="IsShiftPressed" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type Controls:SoftKeyboard}, Mode=FindAncestor}, Path=IsShiftPressed}" />-->
+        <Setter Property="Tag" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type Controls:SoftKeyboard}, Mode=FindAncestor}}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:SoftKey}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Border x:Name="opertymark" />
+                            <Border x:Name="opertymark2" />
+                            <TextBlock
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Panel.ZIndex="3"
+                                FontSize="{TemplateBinding FontSize}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="{TemplateBinding DisplayKey}"
+                                TextTrimming="CharacterEllipsis"
+                                TextWrapping="WrapWithOverflow" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.Setters>
+                                <Setter TargetName="opertymark2" Property="Background" Value="#FF007ACC" />
+                                <Setter Property="Foreground" Value="Snow" />
+                            </Trigger.Setters>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.Setters>
+                                <Setter TargetName="opertymark" Property="Background" Value="LightGray" />
+                            </Trigger.Setters>
+                        </Trigger>
+
+                        <Trigger Property="EffectiveKey" Value="None">
+                            <Trigger.Setters>
+                                <Setter Property="DisplayKey" Value="{Binding RelativeSource={RelativeSource Self}, Path=Key}" />
+                            </Trigger.Setters>
+                        </Trigger>
+
+                        <!--  CapsLock影响键  -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsCapsLock" Value="True" />
+                                <Condition Property="EffectiveKey" Value="CapsLock" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="DisplayKey" Value="{Binding RelativeSource={RelativeSource Self}, Path=UpperKey}" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsCapsLock" Value="False" />
+                                <Condition Property="EffectiveKey" Value="CapsLock" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="DisplayKey" Value="{Binding RelativeSource={RelativeSource Self}, Path=Key}" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+
+                        <!--  Shift影响键  -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsShiftPressed" Value="True" />
+                                <Condition Property="EffectiveKey" Value="Shift" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="DisplayKey" Value="{Binding RelativeSource={RelativeSource Self}, Path=ShiftKey}" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsShiftPressed" Value="False" />
+                                <Condition Property="EffectiveKey" Value="Shift" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="DisplayKey" Value="{Binding RelativeSource={RelativeSource Self}, Path=Key}" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+
+                        <!--  特殊键状态处理  -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsCanTogled" Value="True" />
+                                <Condition Property="IsToggled" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="Foreground" Value="Red" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Controls:SoftKeyboard}">
+        <Setter Property="MaxHeight" Value="320" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0,1,0,0" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="InputMethod.IsInputMethodEnabled" Value="False" />
+        <Setter Property="BorderBrush" Value="#FFE0E0E0" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="#FF303030" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:SoftKeyboard}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Border
+                                Height="40"
+                                BorderBrush="#FF007ACC"
+                                BorderThickness="0,0,0,3"
+                                Visibility="{TemplateBinding HeadVisibility}">
+                                <Grid>
+                                    <TextBlock
+                                        Margin="20,0"
+                                        VerticalAlignment="Center"
+                                        FontSize="16"
+                                        Text="键盘" />
+                                    <Button
+                                        Width="40"
+                                        HorizontalAlignment="Right"
+                                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                </Grid>
+                            </Border>
+
+                            <Grid x:Name="PART_KEYPANEL" Grid.Row="1">
+                                <Grid ClipToBounds="True" SnapsToDevicePixels="True">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="1" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="1" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="1" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="1" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.Resources>
+                                        <Style x:Key="pathStyle" TargetType="{x:Type Path}">
+                                            <Setter Property="Stretch" Value="Fill" />
+                                            <Setter Property="Stroke" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type Controls:SoftKeyboard}, Mode=FindAncestor}, Path=BorderBrush}" />
+                                            <Setter Property="StrokeThickness" Value="1" />
+                                        </Style>
+                                        <Style
+                                            x:Key="pathStyle2"
+                                            BasedOn="{StaticResource pathStyle}"
+                                            TargetType="{x:Type Path}" />
+                                    </Grid.Resources>
+                                    <Grid ClipToBounds="True" SnapsToDevicePixels="True">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Controls:SoftKey
+                                            Key="1"
+                                            Grid.Column="0"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="!" />
+                                        <Path
+                                            Grid.Column="1"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="2"
+                                            Grid.Column="2"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="@" />
+                                        <Path
+                                            Grid.Column="3"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="3"
+                                            Grid.Column="4"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="#" />
+                                        <Path
+                                            Grid.Column="5"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="4"
+                                            Grid.Column="6"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="$" />
+                                        <Path
+                                            Grid.Column="7"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="5"
+                                            Grid.Column="8"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="%" />
+                                        <Path
+                                            Grid.Column="9"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="6"
+                                            Grid.Column="10"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="^" />
+                                        <Path
+                                            Grid.Column="11"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="7"
+                                            Grid.Column="12"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="&amp;" />
+                                        <Path
+                                            Grid.Column="13"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="8"
+                                            Grid.Column="14"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="*" />
+                                        <Path
+                                            Grid.Column="15"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="9"
+                                            Grid.Column="16"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="(" />
+                                        <Path
+                                            Grid.Column="17"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="0"
+                                            Grid.Column="18"
+                                            EffectiveKey="Shift"
+                                            ShiftKey=")" />
+                                        <Path
+                                            Grid.Column="19"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="-"
+                                            Grid.Column="20"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="_" />
+                                        <Path
+                                            Grid.Column="21"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="="
+                                            Grid.Column="22"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="+" />
+                                    </Grid>
+                                    <Path
+                                        Grid.Row="1"
+                                        Data="M0,0 L10,0 z"
+                                        Style="{StaticResource pathStyle}" />
+                                    <Grid
+                                        Grid.Row="2"
+                                        ClipToBounds="True"
+                                        SnapsToDevicePixels="True">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1.5*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Controls:SoftKey
+                                            Key="q"
+                                            Grid.Column="0"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="Q" />
+                                        <Path
+                                            Grid.Column="1"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="w"
+                                            Grid.Column="2"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="W" />
+                                        <Path
+                                            Grid.Column="3"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="e"
+                                            Grid.Column="4"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="E" />
+                                        <Path
+                                            Grid.Column="5"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="r"
+                                            Grid.Column="6"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="R" />
+                                        <Path
+                                            Grid.Column="7"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="t"
+                                            Grid.Column="8"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="T" />
+                                        <Path
+                                            Grid.Column="9"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="y"
+                                            Grid.Column="10"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="Y" />
+                                        <Path
+                                            Grid.Column="11"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="u"
+                                            Grid.Column="12"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="U" />
+                                        <Path
+                                            Grid.Column="13"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="i"
+                                            Grid.Column="14"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="I" />
+                                        <Path
+                                            Grid.Column="15"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="o"
+                                            Grid.Column="16"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="O" />
+                                        <Path
+                                            Grid.Column="17"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="p"
+                                            Grid.Column="18"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="P" />
+                                        <Path
+                                            Grid.Column="19"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="←"
+                                            Grid.Column="20"
+                                            EffectiveKey="None" />
+                                    </Grid>
+                                    <Path
+                                        Grid.Row="3"
+                                        Data="M0,0 L10,0 z"
+                                        Style="{StaticResource pathStyle}" />
+                                    <Grid
+                                        Grid.Row="4"
+                                        ClipToBounds="True"
+                                        SnapsToDevicePixels="True">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Controls:SoftKey
+                                            Key="Caps"
+                                            Grid.Column="0"
+                                            EffectiveKey="None"
+                                            IsCanTogled="True"
+                                            IsToggled="{TemplateBinding IsCapsLock}" />
+                                        <Path
+                                            Grid.Column="1"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="a"
+                                            Grid.Column="2"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="A" />
+                                        <Path
+                                            Grid.Column="3"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="s"
+                                            Grid.Column="4"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="S" />
+                                        <Path
+                                            Grid.Column="5"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="d"
+                                            Grid.Column="6"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="D" />
+                                        <Path
+                                            Grid.Column="7"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="f"
+                                            Grid.Column="8"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="F" />
+                                        <Path
+                                            Grid.Column="9"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="g"
+                                            Grid.Column="10"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="G" />
+                                        <Path
+                                            Grid.Column="11"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="h"
+                                            Grid.Column="12"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="H" />
+                                        <Path
+                                            Grid.Column="13"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="j"
+                                            Grid.Column="14"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="J" />
+                                        <Path
+                                            Grid.Column="15"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="k"
+                                            Grid.Column="16"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="K" />
+                                        <Path
+                                            Grid.Column="17"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="l"
+                                            Grid.Column="18"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="L" />
+                                        <Path
+                                            Grid.Column="19"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key=";"
+                                            Grid.Column="20"
+                                            EffectiveKey="Shift"
+                                            ShiftKey=":" />
+                                        <Path
+                                            Grid.Column="21"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="'"
+                                            Grid.Column="22"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="&quot;" />
+                                    </Grid>
+                                    <Path
+                                        Grid.Row="5"
+                                        Data="M0,0 L10,0 z"
+                                        Style="{StaticResource pathStyle}" />
+                                    <Grid
+                                        Grid.Row="6"
+                                        ClipToBounds="True"
+                                        SnapsToDevicePixels="True">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1.5*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Controls:SoftKey
+                                            Key="Shift"
+                                            Grid.Column="0"
+                                            EffectiveKey="None"
+                                            IsCanTogled="True"
+                                            IsToggled="{TemplateBinding IsShiftPressed}" />
+                                        <Path
+                                            Grid.Column="1"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="z"
+                                            Grid.Column="2"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="Z" />
+                                        <Path
+                                            Grid.Column="3"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="x"
+                                            Grid.Column="4"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="X" />
+                                        <Path
+                                            Grid.Column="5"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="c"
+                                            Grid.Column="6"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="C" />
+                                        <Path
+                                            Grid.Column="7"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="v"
+                                            Grid.Column="8"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="V" />
+                                        <Path
+                                            Grid.Column="9"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="b"
+                                            Grid.Column="10"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="B" />
+                                        <Path
+                                            Grid.Column="11"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="n"
+                                            Grid.Column="12"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="N" />
+                                        <Path
+                                            Grid.Column="13"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="m"
+                                            Grid.Column="14"
+                                            EffectiveKey="CapsLock"
+                                            UpperKey="M" />
+                                        <Path
+                                            Grid.Column="15"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key=","
+                                            Grid.Column="16"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="&lt;" />
+                                        <Path
+                                            Grid.Column="17"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="."
+                                            Grid.Column="18"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="&gt;" />
+                                        <Path
+                                            Grid.Column="19"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="/"
+                                            Grid.Column="20"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="?" />
+                                    </Grid>
+                                    <Path
+                                        Grid.Row="7"
+                                        Data="M0,0 L10,0 z"
+                                        Style="{StaticResource pathStyle}" />
+                                    <Grid
+                                        Grid.Row="8"
+                                        ClipToBounds="True"
+                                        SnapsToDevicePixels="True">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="6*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="1" />
+                                            <ColumnDefinition Width="2*" />
+                                            <!--<ColumnDefinition Width="1" />
+                                                                                        <ColumnDefinition Width="*" />-->
+                                        </Grid.ColumnDefinitions>
+                                        <Controls:SoftKey Key="ch/en" EffectiveKey="None" />
+                                        <Path
+                                            Grid.Column="1"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+
+                                        <Controls:SoftKey
+                                            Key="["
+                                            Grid.Column="2"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="{}{" />
+                                        <Path
+                                            Grid.Column="3"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+
+
+                                        <Controls:SoftKey
+                                            Key="Space"
+                                            Grid.Column="4"
+                                            EffectiveKey="None" />
+                                        <Path
+                                            Grid.Column="5"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="]"
+                                            Grid.Column="6"
+                                            EffectiveKey="Shift"
+                                            ShiftKey="{}}" />
+                                        <Path
+                                            Grid.Column="7"
+                                            Data="M0,0 L0,10 z"
+                                            Style="{StaticResource pathStyle2}" />
+                                        <Controls:SoftKey
+                                            Key="Enter"
+                                            Grid.Column="8"
+                                            EffectiveKey="None" />
+
+                                        <!--<Path
+                                                                                        Grid.Column="9"
+                                                                                        Data="M0,0 L0,10 z"
+                                                                                        Style="{StaticResource pathStyle2}" />
+                                                                                <Controls:SoftKey
+                                                                                        Key="↓"
+                                                                                        Grid.Column="10"
+                                                                                        EffectiveKey="None" />-->
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

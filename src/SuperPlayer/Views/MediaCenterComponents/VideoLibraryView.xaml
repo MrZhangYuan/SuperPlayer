@@ -1,0 +1,269 @@
+﻿<UserControl
+    x:Class="SuperPlayer.Views.MediaCenterComponents.VideoLibraryView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helper="clr-namespace:SuperPlayer.Helper"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shellcontrols="clr-namespace:SuperApp.Shell.Controls;assembly=SuperApp.Shell.Controls"
+    xmlns:ultimate="http://schems.ultimate.com/netfx/2016/xaml/presentation"
+    xmlns:views="http://schemas.actiprosoftware.com/winfx/xaml/views"
+    d:DesignHeight="600"
+    d:DesignWidth="1280"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SuperPlayer;component/Resources/ResourceDir.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="Image">
+                <Setter Property="UseLayoutRounding" Value="True" />
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+                <Setter Property="Stretch" Value="None" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <ultimate:SplitterItemsControl ultimate:SplitterItemsControl.SplitterGripSize="4" Orientation="Horizontal">
+        <ultimate:SplitterItem ultimate:SplitterPanel.MinimumLength="4" ultimate:SplitterPanel.SplitterLength="280">
+            <Grid Margin="20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    Foreground="#FF606060"
+                    Text="Category"
+                    TextTrimming="CharacterEllipsis" />
+                <Button
+                    x:Name="_addDirBt"
+                    Width="40"
+                    Height="40"
+                    HorizontalAlignment="Right"
+                    Click="_addDirBt_Click"
+                    Style="{StaticResource ImageButtonStyle}">
+                    <Image Source="{StaticResource Add}" />
+                </Button>
+
+                <shellcontrols:ListControl
+                    x:Name="_categoryList"
+                    Grid.Row="1"
+                    ItemContainerStyle="{StaticResource NoneListControlItemStyle}"
+                    ItemsSource="{Binding BusinessDataContext.MediaDirectories}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border>
+                                <RadioButton
+                                    x:Name="_cateItem"
+                                    Click="_cateItem_Click"
+                                    Style="{StaticResource CateRadioButtonStyle}"
+                                    Tag="{Binding}">
+                                    <TextBlock Text="{Binding Entity.Path}" TextTrimming="CharacterEllipsis" />
+                                </RadioButton>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </shellcontrols:ListControl>
+            </Grid>
+        </ultimate:SplitterItem>
+        <ultimate:SplitterItem ultimate:SplitterPanel.SplitterLength="*">
+            <Grid Margin="20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        x:Name="_openFolderBt"
+                        Width="50"
+                        Height="50"
+                        Click="_openFolderBt_Click"
+                        Style="{StaticResource ImageButtonStyle}"
+                        Tag="{Binding ElementName=_categoryList, Path=SelectedItem}">
+                        <Image Source="{StaticResource FolderOpen2}" Stretch="None" />
+                    </Button>
+                    <Button
+                        x:Name="_refreshBt"
+                        Grid.Column="1"
+                        Width="50"
+                        Height="50"
+                        Click="_refreshBt_Click"
+                        Style="{StaticResource ImageButtonStyle}"
+                        Tag="{Binding ElementName=_categoryList, Path=SelectedItem}">
+                        <Image Source="{StaticResource Refresh}" Stretch="None" />
+                    </Button>
+
+                    <TextBlock
+                        Grid.Column="2"
+                        Margin="20,0"
+                        VerticalAlignment="Center"
+                        FontSize="30"
+                        Foreground="#FF606060"
+                        Text="{Binding ElementName=_categoryList, Path=SelectedItem.Entity.Path}"
+                        TextTrimming="CharacterEllipsis" />
+
+                    <StackPanel
+                        Grid.Column="3"
+                        Height="40"
+                        Orientation="Horizontal">
+                        <RadioButton
+                            Width="40"
+                            IsChecked="True"
+                            Style="{StaticResource ImageRadioButtonStyle}">
+                            <Image Source="{StaticResource IconView}" Stretch="None" />
+                        </RadioButton>
+                        <RadioButton Width="40" Style="{StaticResource ImageRadioButtonStyle}">
+                            <Image Source="{StaticResource DetailView}" Stretch="None" />
+                        </RadioButton>
+                    </StackPanel>
+                </Grid>
+
+
+
+                <shellcontrols:SwitchViewControl
+                    Grid.Row="1"
+                    ItemsSource="{Binding ElementName=_categoryList, Path=ItemsSource}"
+                    SelectedIndex="{Binding ElementName=_categoryList, Path=SelectedIndex, Mode=TwoWay}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border>
+                                <Grid>
+                                    <shellcontrols:ListControl
+                                        x:Name="_itemDetailList"
+                                        ItemContainerStyle="{StaticResource NoneListControlItemStyle}"
+                                        ItemsSource="{Binding MediaItems}"
+                                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                        Tag="{Binding}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <views:AnimatedWrapPanel
+                                                    Background="Transparent"
+                                                    IsEmptySpaceEvenlyDistributed="True"
+                                                    MouseWheel="SpacingWrapPanel_MouseWheel"
+                                                    Orientation="Horizontal" />
+                                                <!--<ultimate:SpacingWrapPanel Background="Transparent" MouseWheel="SpacingWrapPanel_MouseWheel" />-->
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <RadioButton
+                                                    x:Name="_itemBt"
+                                                    Width="120"
+                                                    Height="160"
+                                                    Margin="5"
+                                                    Background="White"
+                                                    Style="{StaticResource ItemMetroRadioButtonStyle}">
+                                                    <Grid>
+                                                        <Grid ShowGridLines="False">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*" />
+                                                                <RowDefinition Height="36" />
+                                                            </Grid.RowDefinitions>
+                                                            <Image
+                                                                x:Name="_preView"
+                                                                helper:ImageBuildHelper.SourceFlag="SMALL"
+                                                                helper:ImageBuildHelper.SourceURL="{Binding Entity.Path}"
+                                                                Stretch="None"
+                                                                UseLayoutRounding="True" />
+                                                            <!--<ultimate:ProgressRing
+                                                                                                                                Width="24"
+                                                                                                                                Height="24"
+                                                                                                                                Foreground="{StaticResource MainColorBrush}"
+                                                                                                                                IsAnimationActive="{Binding ElementName=_preView, Path=(helper:ImageBuildHelper.IsLoading)}"
+                                                                                                                                IsLarge="False" />-->
+
+                                                            <TextBlock
+                                                                Grid.Row="1"
+                                                                Margin="5,0"
+                                                                VerticalAlignment="Center"
+                                                                FontSize="14"
+                                                                Foreground="#FF505050"
+                                                                Text="{Binding Entity.Name}"
+                                                                TextTrimming="CharacterEllipsis" />
+                                                        </Grid>
+
+                                                        <Grid
+                                                            x:Name="_hiddenPanel"
+                                                            Background="Transparent"
+                                                            MouseLeftButtonDown="_hiddenPanel_MouseLeftButtonDown"
+                                                            Tag="{Binding}"
+                                                            Visibility="Collapsed">
+                                                            <!--<Button
+                                                                                                                                x:Name="_playBt"
+                                                                                                                                Width="30"
+                                                                                                                                Height="30"
+                                                                                                                                Margin="5"
+                                                                                                                                HorizontalAlignment="Left"
+                                                                                                                                VerticalAlignment="Bottom"
+                                                                                                                                Click="_playBt_Click"
+                                                                                                                                Style="{StaticResource ControlButtonStyle}"
+                                                                                                                                Tag="{Binding}">
+                                                                                                                                <Image
+                                                                                                                                        SnapsToDevicePixels="True"
+                                                                                                                                        Source="{StaticResource MediaPlayCirlce}"
+                                                                                                                                        Stretch="Uniform"
+                                                                                                                                        UseLayoutRounding="True" />
+                                                                                                                        </Button>-->
+                                                            <Button
+                                                                x:Name="_showDetailBt"
+                                                                Grid.Row="1"
+                                                                Width="30"
+                                                                Height="30"
+                                                                Margin="5"
+                                                                Padding="0,-2,0,0"
+                                                                HorizontalAlignment="Right"
+                                                                VerticalAlignment="Bottom"
+                                                                Background="Transparent"
+                                                                Click="_showDetailBt_Click"
+                                                                Content="..."
+                                                                FontSize="30"
+                                                                Foreground="DarkGray"
+                                                                SnapsToDevicePixels="True"
+                                                                Style="{StaticResource ControlButtonStyle}"
+                                                                Tag="{Binding}" />
+                                                        </Grid>
+                                                    </Grid>
+                                                </RadioButton>
+                                                <DataTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=_itemBt, Path=IsMouseOver}" Value="True">
+                                                        <Setter TargetName="_hiddenPanel" Property="Visibility" Value="Visible" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding ElementName=_itemBt, Path=IsChecked}" Value="True">
+                                                        <Setter TargetName="_hiddenPanel" Property="Visibility" Value="Visible" />
+                                                    </DataTrigger>
+
+                                                    <DataTrigger Binding="{Binding Entity.ItemType}" Value="0">
+                                                        <Setter TargetName="_preView" Property="Source" Value="{StaticResource UnKnowDefault}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Entity.ItemType}" Value="1">
+                                                        <Setter TargetName="_preView" Property="Source" Value="{StaticResource VideoDefault}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Entity.ItemType}" Value="2">
+                                                        <Setter TargetName="_preView" Property="Source" Value="{StaticResource AudioDefault}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Entity.ItemType}" Value="3">
+                                                        <Setter TargetName="_preView" Property="Source" Value="{StaticResource ImageDefault}" />
+                                                    </DataTrigger>
+                                                </DataTemplate.Triggers>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </shellcontrols:ListControl>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </shellcontrols:SwitchViewControl>
+            </Grid>
+        </ultimate:SplitterItem>
+    </ultimate:SplitterItemsControl>
+</UserControl>

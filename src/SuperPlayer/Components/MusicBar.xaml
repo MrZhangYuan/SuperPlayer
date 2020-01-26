@@ -1,0 +1,224 @@
+﻿<UserControl
+    x:Class="SuperPlayer.Components.MusicBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SuperPlayer.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="100"
+    d:DesignHeight="100"
+    d:DesignWidth="1280"
+    Background="#80303030"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SuperPlayer;component/Resources/ResourceDir.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid ButtonBase.Click="Grid_Click">
+        <Grid.Resources>
+            <Style BasedOn="{StaticResource ControlButtonStyle}" TargetType="Button" />
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" MinWidth="300" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <UserControl
+            x:Name="_videoPreview"
+            Width="176"
+            Margin="0,1,0,0"
+            Background="Black"
+            Visibility="Collapsed" />
+
+        <StackPanel
+            Grid.Row="3"
+            Grid.Column="1"
+            Margin="20,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Width="50"
+                Height="50"
+                Style="{StaticResource MediaPreButtonStyle}" />
+            <CheckBox
+                x:Name="_playPauseCheckBt"
+                Width="60"
+                Height="60"
+                Margin="20,0"
+                Style="{StaticResource PlayPauseCheckButtonStyle}" />
+            <Button
+                Width="50"
+                Height="50"
+                Style="{StaticResource MediaNextButtonStyle}" />
+        </StackPanel>
+
+        <Grid Grid.Column="2" Margin="10,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                x:Name="_titleText"
+                Margin="5,0,0,10"
+                VerticalAlignment="Bottom"
+                FontSize="20"
+                Foreground="White"
+                TextTrimming="CharacterEllipsis" />
+
+
+            <StackPanel
+                Grid.Column="1"
+                MinWidth="100"
+                Margin="0,0,0,10"
+                VerticalAlignment="Bottom"
+                Orientation="Horizontal"
+                TextBlock.FontSize="14"
+                TextBlock.Foreground="White">
+                <TextBlock x:Name="_posionCurrent" />
+                <TextBlock Text=" / " />
+                <TextBlock x:Name="_posionEnd" />
+            </StackPanel>
+
+            <Slider
+                x:Name="_videoPosition"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource MainProcessSliderStyle}"
+                ValueChanged="_videoPosition_ValueChanged" />
+        </Grid>
+
+        <StackPanel
+            Grid.Column="3"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <CheckBox
+                Width="40"
+                Height="40"
+                Margin="10,0"
+                Padding="8"
+                Style="{StaticResource FavoriteCheckButtonStyle}" />
+            <CheckBox
+                x:Name="_volCheckBt"
+                Width="40"
+                Height="40"
+                Margin="10,0"
+                Padding="8"
+                Style="{StaticResource VolumeCheckButtonStyle}" />
+            <Popup
+                x:Name="_voluPopup"
+                Width="250"
+                Height="80"
+                AllowsTransparency="True"
+                IsOpen="{Binding ElementName=_volCheckBt, Path=IsChecked, Mode=OneWay}"
+                Placement="Top"
+                PlacementRectangle="-18,-10,0,0"
+                PlacementTarget="{Binding ElementName=_volCheckBt}"
+                PopupAnimation="Fade"
+                StaysOpen="False">
+                <Grid>
+                    <Border
+                        Margin="5"
+                        Background="#FF303030"
+                        BorderBrush="{StaticResource MainColorBrush}"
+                        BorderThickness="1">
+                        <Border.Effect>
+                            <DropShadowEffect
+                                BlurRadius="7"
+                                Opacity="0.3"
+                                ShadowDepth="0"
+                                Color="{StaticResource MainColor}" />
+                        </Border.Effect>
+                    </Border>
+                    <DockPanel
+                        Margin="12,0"
+                        VerticalAlignment="Center"
+                        LastChildFill="True">
+                        <CheckBox
+                            Width="30"
+                            Height="30"
+                            Margin="0,0,5,0"
+                            Padding="5"
+                            Style="{StaticResource VolumeCheckButtonStyle}" />
+                        <Slider
+                            VerticalAlignment="Center"
+                            Maximum="100"
+                            Minimum="0"
+                            Style="{StaticResource MainProcessSliderStyle}" />
+                    </DockPanel>
+                </Grid>
+            </Popup>
+            <Button
+                Width="40"
+                Height="40"
+                Margin="10,0"
+                Padding="8"
+                Content="单曲循环"
+                Style="{StaticResource ContentButtonStyle}">
+                <Button.Tag>
+                    <PathGeometry>M26.394612,15.579789L23.719562,21.156862 26.29761,20.020854 26.736613,20.145857 29.102667,20.954893z M25.999992,0C28.208992,0 29.999992,1.7910004 29.999992,4 29.999992,6.2090001 28.208992,8 25.999992,8 24.20518,8 22.686313,6.8176603 22.179837,5.1894259L22.126257,5.0007625 22.086252,5.0007501C21.393502,5.0004997,20.603502,5,20.084002,5L7.8310013,5C4.6160011,5,2,7.6420002,2,10.889L2,24.111C2,27.358,4.6160011,29.999999,7.8310013,29.999999L19.542002,29.999999C22.757003,29.999999,25.373003,27.358,25.373003,24.111L25.390384,22.605316 22.293543,23.973934C22.152533,24.036923 22.00153,24.066953 21.85254,24.066953 21.561535,24.066953 21.275519,23.951961 21.064517,23.735953 20.746518,23.40892 20.663509,22.911901 20.85852,22.497892L25.385592,13.058745C25.565602,12.681723 25.939602,12.441729 26.360614,12.435686 26.388615,12.434687 26.416244,12.434691 26.443486,12.43567 26.852113,12.450347 27.173562,12.684165 27.352636,13.035734L31.882713,22.027912C32.083706,22.433926 32.022716,22.909887 31.727713,23.24693 31.432693,23.581898 30.969688,23.705923 30.547684,23.561938L27.391997,22.483538 27.373003,24.123C27.373003,28.460999,23.860003,31.999999,19.542002,31.999999L7.8310013,31.999999C3.5130005,31.999999,0,28.460999,0,24.111L0,10.889C0,6.539,3.5130005,3,7.8310013,3L20.085002,3C20.603002,3,21.388752,3.0007505,22.077378,3.0011253L22.125755,3.0011482 22.125932,3.0003843C22.569885,1.2750387,24.136149,0,25.999992,0z</PathGeometry>
+                </Button.Tag>
+            </Button>
+            <Button
+                x:Name="_listBt"
+                Width="40"
+                Height="40"
+                Margin="10,0"
+                Padding="8"
+                Content="列表"
+                Style="{StaticResource ContentButtonStyle}">
+                <Button.Tag>
+                    <PathGeometry>M11.135,26.317001L31.922001,26.317001 31.922001,30.209999 11.135,30.209999z M0,24.526001L7.4750001,24.526001 7.4750001,32.000999 0,32.000999z M11.135,14.053001L31.922001,14.053001 31.922001,17.948997 11.135,17.948997z M0,12.262001L7.4750001,12.262001 7.4750001,19.737 0,19.737z M11.135,1.7910005L31.922001,1.7910005 31.922001,5.6839981 11.135,5.6839981z M0,0L7.4750001,0 7.4750001,7.4749985 0,7.4749985z</PathGeometry>
+                </Button.Tag>
+            </Button>
+            <Popup
+                x:Name="_listPopup"
+                Width="350"
+                MinHeight="300"
+                MaxHeight="500"
+                AllowsTransparency="True"
+                Placement="Top"
+                PlacementRectangle="-240,-10,0,0"
+                PlacementTarget="{Binding ElementName=_listBt}"
+                PopupAnimation="Fade"
+                StaysOpen="False">
+                <Grid>
+                    <Border
+                        Margin="5"
+                        Background="#FF303030"
+                        BorderBrush="{StaticResource MainColorBrush}"
+                        BorderThickness="1">
+                        <Border.Effect>
+                            <DropShadowEffect
+                                BlurRadius="7"
+                                Opacity="0.3"
+                                ShadowDepth="0"
+                                Color="{StaticResource MainColor}" />
+                        </Border.Effect>
+                    </Border>
+                </Grid>
+            </Popup>
+            <Button
+                Width="40"
+                Height="40"
+                Margin="10,0"
+                Padding="8"
+                Content="播放页"
+                Style="{StaticResource ContentButtonStyle}">
+                <Button.Tag>
+                    <PathGeometry>M1.9939595,4.0780029L1.9939595,27.921021 17.321976,16z M0,0L20.571001,16 0,32z</PathGeometry>
+                </Button.Tag>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

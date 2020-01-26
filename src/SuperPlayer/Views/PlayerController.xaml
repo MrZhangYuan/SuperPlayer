@@ -1,0 +1,421 @@
+﻿<UserControl
+    x:Class="SuperPlayer.Views.PlayerController"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:SuperPlayer.Components"
+    xmlns:core="clr-namespace:SuperPlayer.Core;assembly=SuperPlayer.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SuperPlayer.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shellcontrols="clr-namespace:SuperApp.Shell.Controls;assembly=SuperApp.Shell.Controls"
+    xmlns:syscmd="clr-namespace:SuperPlayer.Core;assembly=SuperPlayer.Core"
+    xmlns:ultimate="http://schems.ultimate.com/netfx/2016/xaml/presentation"
+    xmlns:ultimatecore="http://schems.ultimate.com/netfx/2016/xaml/core"
+    x:Name="SELF"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    AllowDrop="True"
+    Background="Transparent"
+    BorderThickness="0"
+    Drop="UserControl_Drop"
+    MouseMove="UserControl_MouseMove"
+    mc:Ignorable="d">
+    <UserControl.CacheMode>
+        <BitmapCache
+            EnableClearType="True"
+            RenderAtScale="1"
+            SnapsToDevicePixels="False" />
+    </UserControl.CacheMode>
+    <UserControl.OpacityMask>
+        <SolidColorBrush Opacity="1" Color="#FF000000" />
+    </UserControl.OpacityMask>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SuperPlayer;component/Resources/ResourceDir.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush x:Key="MarkBackground" Color="#B0000000" />
+
+            <Storyboard x:Key="SetOpacityMaskToZeroSbKey">
+                <DoubleAnimation
+                    Storyboard.TargetProperty="OpacityMask.(SolidColorBrush.Opacity)"
+                    To="0"
+                    Duration="0:0:0.5" />
+            </Storyboard>
+
+            <Style x:Key="PlayerControlButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                <Setter Property="Background" Value="White" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="Padding" Value="1" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border
+                                x:Name="border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="100"
+                                SnapsToDevicePixels="true">
+                                <Grid>
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="100">
+                                        <Border.CacheMode>
+                                            <BitmapCache
+                                                EnableClearType="True"
+                                                RenderAtScale="1"
+                                                SnapsToDevicePixels="True" />
+                                        </Border.CacheMode>
+                                        <Border.Effect>
+                                            <DropShadowEffect
+                                                BlurRadius="30"
+                                                ShadowDepth="0"
+                                                Color="White" />
+                                        </Border.Effect>
+                                    </Border>
+                                    <ContentPresenter
+                                        x:Name="contentPresenter"
+                                        Margin="{TemplateBinding Padding}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Focusable="False"
+                                        RecognizesAccessKey="True"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Grid>
+
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsDefaulted" Value="true">
+                                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                                </Trigger>
+                                <!--<Trigger Property="IsMouseOver" Value="true">
+                                                                <Setter TargetName="border" Property="Background" Value="{StaticResource Button.MouseOver.Background}" />
+                                                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}" />
+                                                        </Trigger>-->
+                                <!--<Trigger Property="IsPressed" Value="true">
+                                                                <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Pressed.Background}" />
+                                                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Pressed.Border}" />
+                                                        </Trigger>-->
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <!--<EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                                <Storyboard>
+                                        <DoubleAnimation
+                                                BeginTime="0:0:3"
+                                                Storyboard.TargetProperty="OpacityMask.(SolidColorBrush.Opacity)"
+                                                To="0"
+                                                Duration="0:0:0.5" />
+                                </Storyboard>
+                        </BeginStoryboard>
+                </EventTrigger>-->
+        <!--<EventTrigger RoutedEvent="MouseMove" >
+                        <BeginStoryboard>
+                                <Storyboard>
+                                        <DoubleAnimation
+                                                Storyboard.TargetProperty="OpacityMask.(SolidColorBrush.Opacity)"
+                                                To="1"
+                                                Duration="0:0:0.5" />
+                                        <DoubleAnimation
+                                                BeginTime="0:0:3"
+                                                Storyboard.TargetProperty="OpacityMask.(SolidColorBrush.Opacity)"
+                                                To="0"
+                                                Duration="0:0:0.5" />
+                                </Storyboard>
+                        </BeginStoryboard>
+                </EventTrigger>-->
+        <!--<EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                                <Storyboard>
+                                        <DoubleAnimation
+                                                Storyboard.TargetProperty="OpacityMask.(SolidColorBrush.Opacity)"
+                                                To="1"
+                                                Duration="0:0:0.5" />
+                                </Storyboard>
+                        </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                                <Storyboard>
+                                        <DoubleAnimation
+                                                BeginTime="0:0:3"
+                                                Storyboard.TargetProperty="OpacityMask.(SolidColorBrush.Opacity)"
+                                                To="0"
+                                                Duration="0:0:0.5" />
+                                </Storyboard>
+                        </BeginStoryboard>
+                </EventTrigger>-->
+    </UserControl.Triggers>
+    <syscmd:LazyGrid>
+        <Grid.Resources>
+            <Style BasedOn="{StaticResource ControlButtonStyle}" TargetType="Button" />
+        </Grid.Resources>
+        <Grid ButtonBase.Click="Grid_Click">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border Margin="0,0,0,-50">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#B0000000" />
+                        <GradientStop Offset="1" Color="#00000000" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <ultimate:WindowTitleBar
+                Panel.ZIndex="1"
+                Background="Transparent"
+                Visibility="{Binding ElementName=SELF, Path=NotAtHostWindow, Converter={x:Static ultimatecore:BoolenToVisibilityConverter.Instance}}" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    Width="50"
+                    Background="{StaticResource Back}"
+                    Command="{Binding Source={x:Static syscmd:SystemCommandManager.Instance}, Path=[MediaCenter]}"
+                    FontSize="20"
+                    FontWeight="Bold" />
+                <TextBlock
+                    x:Name="_titleText"
+                    Grid.Column="1"
+                    Margin="10,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    Foreground="White"
+                    TextTrimming="CharacterEllipsis" />
+                <components:SysCommandBar
+                    Grid.Column="3"
+                    Width="50"
+                    Height="50"
+                    VerticalAlignment="Top"
+                    MinBtVisibility="Collapsed"
+                    NomalMaxBtVisibility="Collapsed"
+                    OptionBtVisibility="Collapsed"
+                    Visibility="Collapsed" />
+            </Grid>
+
+            <Grid
+                x:Name="_openPanel"
+                Grid.Row="1"
+                MaxWidth="600"
+                Margin="20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border
+                    Width="80"
+                    Height="80"
+                    Background="{StaticResource Logo_Large}"
+                    UseLayoutRounding="True"
+                    Visibility="Collapsed" />
+
+                <DockPanel
+                    Grid.Row="1"
+                    Height="46"
+                    LastChildFill="True">
+                    <Button
+                        x:Name="_openUrl"
+                        Grid.Column="1"
+                        Width="120"
+                        Content="打开URL"
+                        DockPanel.Dock="Right"
+                        FontSize="16"
+                        Foreground="White"
+                        IsDefault="True"
+                        SnapsToDevicePixels="True"
+                        Style="{x:Null}"
+                        Template="{StaticResource MainSearchBtTemplate}" />
+                    <shellcontrols:SearchControl
+                        x:Name="_fileUrl"
+                        shellcontrols:TextBoxHelper.WaterMark="从本地媒体库搜索，或直接输入URL"
+                        shellcontrols:TextBoxHelper.WaterMarkFontSize="16"
+                        FontSize="16"
+                        Text="http://aplayer.open.xunlei.com/test.hflv" />
+                </DockPanel>
+            </Grid>
+
+            <!--<Grid
+                                x:Name="_playingPanel"
+                                Grid.Row="1"
+                                Visibility="{Binding ElementName=_openPanel, Path=Visibility, Converter={x:Static ultimatecore:ReverseVisibilityConverter.Instance}}">
+                                <Button
+                                        Width="30"
+                                        Height="120"
+                                        HorizontalAlignment="Left"
+                                        Style="{StaticResource MediaBackButtonStyle}" />
+                                <CheckBox
+                                        x:Name="_playPauseCheckBt"
+                                        Width="80"
+                                        Height="80"
+                                        Style="{StaticResource PlayPauseCheckButtonStyle}" />
+                                <Button
+                                        Width="30"
+                                        Height="120"
+                                        HorizontalAlignment="Right"
+                                        Style="{StaticResource MediaFrontButtonStyle}" />
+                        </Grid>-->
+
+            <Border
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Margin="0,-60,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Offset="1" Color="#B0000000" />
+                        <GradientStop Offset="0" Color="#00000000" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Grid Grid.Row="3" Height="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel
+                    Margin="10"
+                    VerticalAlignment="Top"
+                    Orientation="Horizontal"
+                    TextBlock.FontSize="14"
+                    TextBlock.Foreground="White">
+                    <TextBlock x:Name="_posionCurrent" />
+                    <TextBlock Text=" / " />
+                    <TextBlock x:Name="_posionEnd" />
+                </StackPanel>
+
+                <DockPanel
+                    Margin="5,0"
+                    VerticalAlignment="Center"
+                    LastChildFill="True">
+                    <CheckBox
+                        x:Name="_volumeCheckBt"
+                        Width="30"
+                        Height="30"
+                        Margin="0,0,5,0"
+                        Padding="5"
+                        Style="{StaticResource VolumeCheckButtonStyle}" />
+                    <Slider
+                        x:Name="_volumePosition"
+                        Width="100"
+                        VerticalAlignment="Center"
+                        Maximum="100"
+                        Minimum="0"
+                        Style="{StaticResource MainProcessSliderStyle}"
+                        ValueChanged="_volumePosition_ValueChanged" />
+                </DockPanel>
+
+                <StackPanel
+                    Grid.Column="3"
+                    Margin="5,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Button
+                        x:Name="_stopBt"
+                        Width="40"
+                        Height="40"
+                        Background="{StaticResource MediaStop}" />
+                    <Button
+                        x:Name="_openFile"
+                        Width="40"
+                        Height="40"
+                        Margin="10,0"
+                        Background="{StaticResource FolderOpen}" />
+                    <Button
+                        Width="40"
+                        Height="40"
+                        Background="{StaticResource FullScreenExpand}"
+                        Command="{Binding Source={x:Static syscmd:SystemCommandManager.Instance}, Path=[FullScreen]}" />
+                    <Button
+                        Width="40"
+                        Height="40"
+                        Background="{StaticResource FullScreenCollapse}"
+                        Command="{Binding Source={x:Static syscmd:SystemCommandManager.Instance}, Path=[FullScreenCancel]}" />
+                </StackPanel>
+
+
+                <StackPanel
+                    Grid.ColumnSpan="4"
+                    Width="350"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Button
+                        x:Name="_stopBt2"
+                        Width="50"
+                        Height="50"
+                        Margin="0,0,20,0"
+                        Style="{StaticResource MediaStopButtonStyle}"
+                        Visibility="Hidden" />
+                    <Button
+                        Width="50"
+                        Height="50"
+                        Background="#90FFFFFF"
+                        Style="{StaticResource MediaPreButtonStyle}" />
+                    <CheckBox
+                        x:Name="_playPauseCheckBt"
+                        Width="70"
+                        Height="70"
+                        Margin="20,0"
+                        Background="#90FFFFFF"
+                        Style="{StaticResource PlayPauseCheckButtonStyle}" />
+                    <Button
+                        Width="50"
+                        Height="50"
+                        Background="#90FFFFFF"
+                        Style="{StaticResource MediaNextButtonStyle}" />
+                    <Border
+                        Width="50"
+                        Height="50"
+                        Margin="20,0,0,0" />
+                </StackPanel>
+            </Grid>
+
+            <DockPanel
+                Grid.Row="2"
+                VerticalAlignment="Top"
+                LastChildFill="True">
+                <RepeatButton
+                    Width="30"
+                    Background="{StaticResource MediaPrevious}"
+                    DockPanel.Dock="Left"
+                    Style="{StaticResource ControlButtonStyle}" />
+                <RepeatButton
+                    Width="30"
+                    Background="{StaticResource MediaNext}"
+                    DockPanel.Dock="Right"
+                    Style="{StaticResource ControlButtonStyle}" />
+                <Slider
+                    x:Name="_videoPosition"
+                    Margin="5,0"
+                    Style="{StaticResource MainProcessSliderStyle}"
+                    ValueChanged="_videoPosition_ValueChanged" />
+            </DockPanel>
+        </Grid>
+    </syscmd:LazyGrid>
+</UserControl>

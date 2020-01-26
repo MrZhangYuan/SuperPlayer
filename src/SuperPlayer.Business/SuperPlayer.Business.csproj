@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97E1ED79-098A-4749-B1AF-EA4F11F96716}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>SuperPlayer.Business</RootNamespace>
+    <AssemblyName>SuperPlayer.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataUtil.cs" />
+    <Compile Include="FileExtension.cs" />
+    <Compile Include="FileType.cs" />
+    <Compile Include="Generates\FileItemProducer.cs" />
+    <Compile Include="Generates\ItemProducer.cs" />
+    <Compile Include="IDataContext.cs" />
+    <Compile Include="IPlayListService.cs" />
+    <Compile Include="ModelBase.cs" />
+    <Compile Include="Models\MediaDirectoryModel.cs" />
+    <Compile Include="Models\MediaItemModel.cs" />
+    <Compile Include="Models\ParamValueModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SuperApp.DBAdapter.SQLite\SuperApp.DBAdapter.SQLite.csproj">
+      <Project>{c0cc4ef1-1c8f-4bc8-8e8d-0870703bebac}</Project>
+      <Name>SuperApp.DBAdapter.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperApp.EntityFramework\SuperApp.EntityFramework.csproj">
+      <Project>{a23c3e52-8cbe-4c40-83b1-ad66b1f09e60}</Project>
+      <Name>SuperApp.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperPlayer.Core.Service\SuperPlayer.Core.Service.csproj">
+      <Project>{935298b6-aa24-43a5-9426-7f8f50235f21}</Project>
+      <Name>SuperPlayer.Core.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperPlayer.Core.Utilities\SuperPlayer.Core.Utilities.csproj">
+      <Project>{30c37144-11bc-4e83-84b2-4eaf07ca20d2}</Project>
+      <Name>SuperPlayer.Core.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperPlayer.Core\SuperPlayer.Core.csproj">
+      <Project>{4fa9d15a-342d-480e-a23f-a1402fddf650}</Project>
+      <Name>SuperPlayer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperPlayer.Models\SuperPlayer.Models.csproj">
+      <Project>{ff3bb0d4-576a-44ec-a857-d08418696137}</Project>
+      <Name>SuperPlayer.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UltimateCore\UltimateCore.csproj">
+      <Project>{66BBB21D-AA56-4783-9A36-2A8554B661FC}</Project>
+      <Name>UltimateCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

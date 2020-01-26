@@ -1,0 +1,40 @@
+﻿<!--<Window
+    x:Class="SuperPlayer.Core.PlayerControlHostWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SuperPlayer.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ultimate="http://schems.ultimate.com/netfx/2016/xaml/presentation"
+    AllowsTransparency="True"
+    BorderThickness="0"
+    MouseLeftButtonDown="Window_MouseLeftButtonDown"
+    ResizeMode="NoResize"
+    ShowActivated="False"
+    ShowInTaskbar="False"
+    WindowStyle="None"
+    mc:Ignorable="d" />-->
+
+<Window
+    x:Class="SuperPlayer.Core.PlayerControlHostWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SuperPlayer.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ultimate="http://schems.ultimate.com/netfx/2016/xaml/presentation"
+    MouseLeftButtonDown="Window_MouseLeftButtonDown"
+    ResizeMode="CanMinimize"
+    ShowActivated="False"
+    ShowInTaskbar="False"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" GlassFrameThickness="-1" />
+    </WindowChrome.WindowChrome>
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            <ContentPresenter />
+        </ControlTemplate>
+    </Window.Template>
+</Window>
